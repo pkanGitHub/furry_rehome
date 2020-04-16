@@ -3,10 +3,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <title>Furry ReHome App</title>
 </head>
 
 <body>
+    <div class="header">
+        <h1>Furry ReHome</h1>
+    </div>
+    <!-- navbar -->
+    <div class="main">
+        <div class="topnav">
+            <a href="#">Home</a>
+            <a href="#">Rehome A Pet</a>
+            <a href="#">View Available Pets</a>
+        </div>
+
+        <!-- rehoming form -->
+        <div class="container">
+            <form id="addPetForm">
+                <h2>Pet Info:</h2>
+                <div id="petCategory">
+                    <h4>Category:</h4>
+                    <input type="radio" id="radioDog" value="Dogs" name="pet">Dog
+                    <input type="radio" id="radioCat" value="Cats" name="pet">Cat
+                    <input type="radio" id="radioFerret" value="Ferrets" name="pet">Ferret
+                    <input type="radio" id="radioHorses" value="Horses" name="pet">Horse
+                    <input type="radio" id="radioOtherCritters" value="OtherCritters" name="pet">Other Critter
+                </div>
+                <div id="petBasicInfo">
+                    Name: <input id="addPetName" type="text"><br>
+                    Age: <input id="addPetAge" type="range"><br>
+                    Health Concern: <input id="addPetHealth" type="text"><br>
+                    Image: <input id="addPetImg" type="text"><br>
+                </div>
+            </form>
+            <form id="addContactForm" class="container">
+                <h2>Contact Info:</h2>
+                <div id="contactBasicInfo">
+                    Name:<input id="addContactName" type="text"><br>
+                    Email:<input id="addContactEmail" type="text"><br>
+                </div>
+                <input id="submit" type="submit">
+            </form>
+        </div>
+    </div>
+
 
 </body>
 <script type="application/javascript" src="src/index.js" charset="UTF-8"></script>
