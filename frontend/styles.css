@@ -12,42 +12,59 @@ body {
     text-align: center;
 }
 
-.topnav {
-    overflow: hidden;
-    background-color: #333;
+/* ----------------------- */
+/* form card css  */
+ .card {
+    margin: 0 auto;
+    width: 800px;
 }
 
-.topnav a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
+.card-header, .contact-form {
+  text-align: center;
 }
 
-.topnav a:hover {
-    background-color: #ddd;
-    color: black;
+input[type="radio"] {
+    margin: 0 10px 0 10px;
 }
 
-.category-link li {
-    margin: auto;
-    /* width: 50%; */
-    list-style: none;
-    display: inline;
-    border: 1px solid black;
+label {
+    clear: left;
+    width: 330px;
+    text-align: right;
 }
 
-.category-link a:link {
-    text-decoration: none;
+.pet-form input {
+    display: inline-block;
 }
 
+.submit {
+    position: absolute;
+    top: 740px;
+    left: 900px;
+}
+
+/* ----------------------- */
+/* view available pet  */
+
+/* category selection css  */
+.category-link {
+    position: absolute;
+    top: 800px;
+    left: 490px; 
+}
+
+
+button[type="button"] {
+    height: 40px;
+    width: 150px;
+}
+/* ----------------------- */
+/* pet card flipping */
 /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
 .flip-card {
     background-color: transparent;
-    width: 450px;
-    height: 300px;
+    width: 300px;
+    height: 200px;
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
@@ -88,3 +105,12 @@ body {
     color: white;
     transform: rotateY(180deg);
   }
+  /* ----------------------- */
+
+  /* pet card spacing */
+  .col-md {
+    padding-bottom: 30px;
+  }
+
+
+  
