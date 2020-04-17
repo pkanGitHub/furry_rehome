@@ -37,10 +37,9 @@ label {
     display: inline-block;
 }
 
-.submit {
-    position: absolute;
-    top: 740px;
-    left: 900px;
+.submit-wrap {
+   text-align: center;
+   margin-top: 10px;
 }
 
 /* ----------------------- */
@@ -48,13 +47,14 @@ label {
 
 /* category selection css  */
 .category-link {
-    position: absolute;
-    top: 800px;
-    left: 490px; 
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
 }
 
 
-button[type="button"] {
+.category-link button[type="button"] {
+    margin-right: 5px;
     height: 40px;
     width: 150px;
 }
