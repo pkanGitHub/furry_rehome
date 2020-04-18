@@ -21,44 +21,45 @@
     <!-- navbar -->
     <div class="main">
         <div class="btn-group d-flex justify-content-center" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-secondary">Home</button>
-            <button type="button" class="btn btn-secondary">Rehome A Pet</button>
-            <button type="button" class="btn btn-secondary">View Available Pets</button>
+            <button type="button" class="btn btn-secondary" id="home-page">Home</button>
+            <button type="button" class="btn btn-secondary" id="rehome-page">Rehome A Pet</button>
+            <button type="button" class="btn btn-secondary" id="view-pets-page">View Available Pets</button>
         </div>
 
         <!-- rehoming form bootstrap -->
         <br>
         <div class="container">
             <div class="card">
-                <h5 class="card-header">Pet info</h5>
-                <div class="card-body">
-                    <h5 class="card-title">Category:</h5>
-                    <input type="radio" id="radioDog" value="Dogs" name="pet"> Dog
-                    <input type="radio" id="radioCat" value="Cats" name="pet"> Cat
-                    <input type="radio" id="radioFerret" value="Ferrets" name="pet"> Ferret
-                    <input type="radio" id="radioHorses" value="Horses" name="pet"> Horse
-                    <input type="radio" id="radioOtherCritters" value="OtherCritters" name="pet"> Other Critter
-                </div>
-
-                <div class="pet-form" id="petBasicInfo">
-                    <label>Name: </label>
-                    <input id="addPetName" type="text"><br><br>
-                    <label>Age: </label>
-                    <input id="addPetAge" type="text"><br><br>
-                    <label>Health Concern: </label>
-                    <input id="addPetHealth" type="text"><br><br>
-                    <label>Image URL: </label>
-                    <input id="addPetImg" type="text"><br><br>
-                </div>
-                <h5 class="card-header">Contact info</h5><br>
-                <div class="contact-form" id="contactBasicInfo">
-                    Name: <input id="addContactName" type="text"><br><br>
-                    Email: <input id="addContactEmail" type="text"><br><br>
-                </div>
+                <form class="rehome-form" id="rehome-form" data-remote="true">
+                    <h5 class="card-header">Pet info</h5>
+                    <div class="card-body">
+                        <h5 class="card-title">Category:</h5>
+                        <input type="radio" id="radioDog" value="Dogs" name="pet"> Dog
+                        <input type="radio" id="radioCat" value="Cats" name="pet"> Cat
+                        <input type="radio" id="radioFerret" value="Ferrets" name="pet"> Ferret
+                        <input type="radio" id="radioHorses" value="Horses" name="pet"> Horse
+                        <input type="radio" id="radioOtherCritters" value="OtherCritters" name="pet"> Other Critter
+                    </div>
+                    <div class="pet-form" id="petBasicInfo">
+                        <label>Name: </label>
+                        <input id="addPetName" type="text" name="petName"><br><br>
+                        <label>Age: </label>
+                        <input id="addPetAge" type="text" name="petAge"><br><br>
+                        <label>Health Concern: </label>
+                        <input id="addPetHealth" type="text" name="petHealth"><br><br>
+                        <label>Image URL: </label>
+                        <input id="addPetImg" type="text" name="petImg"><br><br>
+                    </div>
+                    <h5 class="card-header">Contact info</h5><br>
+                    <div class="contact-form" id="contactBasicInfo">
+                        Name: <input id="addContactName" type="text"><br><br>
+                        Email: <input id="addContactEmail" type="text"><br><br>
+                    </div>
             </div>
             <div class="submit-wrap">
                 <input type="submit" value="Rehome Pet">
             </div>
+            </form>
 
             <!-- css -->
             <!-- <form id="addPetForm"> -->
