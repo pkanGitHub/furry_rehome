@@ -88,6 +88,7 @@ function createPet() {
             .then(json => createPetCard(json)) //pass in my new function, passing the json as a arg(pets) i am calling. have access to all my pet data
             .catch(e => console.log(e));
     })
+
 }
 
 // function createPetCard(pet) => to create a card with html and insert pet data
