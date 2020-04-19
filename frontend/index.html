@@ -102,25 +102,27 @@
             </div>
             <br><br><br><br>
             <!-- pet card -->
-            <div class="row ml-4">
-                <div class="col-md">
-                    <div class="flip-card">
-                        <div class="flip-card-inner">
-                            <div class="flip-card-front">
-                                <img src="img/Aki.jpg" class="img-thumbnail" style="width:200x;height:200px;">
-                            </div>
-                            <div class="flip-card-back">
-                                <h2>Name:</h2>
-                                <p>Age:</p>
-                                <p>Health Concern:</p>
-                                <p>Owner:</p>
-                                <p>Contact email:</p>
+            <div id="pet-container" class="row ml-4">
+                <template id="pet-card-template">
+                    <div class="col-md pet-card">
+                        <div class="flip-card">
+                            <div class="flip-card-inner">
+                                <div class="flip-card-front">
+                                    <img src="img/Aki.jpg" class="img-thumbnail" style="width:200x;height:200px;">
+                                </div>
+                                <div class="flip-card-back">
+                                    <h2>Name:</h2>
+                                    <p>Age:</p>
+                                    <p>Health Concern:</p>
+                                    <p>Owner:</p>
+                                    <p>Contact email:</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </template>
 
-                <div class="col-md">
+                <!-- <div class="col-md">
                     <div class="flip-card">
                         <div class="flip-card-inner">
                             <div class="flip-card-front">
@@ -169,12 +171,9 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
-
-
-
     </div>
 
 

@@ -20,10 +20,20 @@ class PetsController < ApplicationController
     def create
         @user = User.new(user_params)
         if @user.save
-            render json: @user, status: :created
+            render json: @user.pets.last, status: :created
+            # render json: {user.pet.last}
         else
             render json: @user.errors, status: :unprocessable_entity
         end
+    end
+
+    # work like show but with route /pet-user
+    # 2 ways to test if your controller works
+    # 1) put the route into the browser
+    # 2) try it out with Postman
+    def pet_user
+        @pet = Pet.find(params[:id]) # .where returns an array, .find returns a single instance/object
+        render json: @pet.user
     end
 
     private
