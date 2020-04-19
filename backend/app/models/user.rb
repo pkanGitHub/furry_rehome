@@ -1,7 +1,7 @@
 class User < ApplicationRecord
     # before_create: :check_if_user_exists
 
-    has_many :pets
+    has_many :pets, dependent: :destroy
     accepts_nested_attributes_for :pets
 
     def self.pets_of_email(email)
