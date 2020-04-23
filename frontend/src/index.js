@@ -118,7 +118,7 @@ async function createPetCard(pet) {
     const user = await getUserFromPetID(pet.id)
     const petsCard = document.querySelector('#pet-container')
     const newPet = document.querySelector('#pet-card-template').content.cloneNode(true)
-    newPet.querySelector(".img-thumbnail").src = pet.image_link || "https://us.123rf.com/450wm/pavelstasevich/pavelstasevich1811/pavelstasevich181101032/112815935-stock-vector-no-image-available-icon-flat-vector-illustration.jpg?ver=6"
+    newPet.querySelector(".img-thumbnail").src = pet.image_link || "img/NoImage.png"
     let petCardAttributes = newPet.querySelector(".flip-card-back").children
     petCardAttributes[0].innerText = `Name: ${pet.pet_name}`
     petCardAttributes[1].innerText = `Age: ${pet.pet_age}`
