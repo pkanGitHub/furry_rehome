@@ -78,7 +78,8 @@ async function loadAllPets(category) {
     allPets.forEach(pet => createPetCard(pet));
 }
 
-async function eventForAllPetType() {
+async function eventForAllButtons() {
+    // pet buttons
     const allBtn = document.getElementById("allBtn");
     allBtn.addEventListener('click', () => loadAllPets())
     const dogBtn = document.getElementById("dogsBtn");
@@ -91,6 +92,14 @@ async function eventForAllPetType() {
     horseBtn.addEventListener('click', () => loadAllPets("horse"))
     const otherCritterBtn = document.getElementById("otherCrittersBtn");
     otherCritterBtn.addEventListener('click', () => loadAllPets("otherCritter"))
+
+    // navbar buttons 
+    // const home = document.getElementById("home-page");
+    // home.addEventListener('click', () => )
+    const rehomeFormBtn = document.getElementById("rehome-page");
+    const form = document.querySelector('.card')
+    rehomeFormBtn.addEventListener('click', () => form)
+
 }
 
 // -- get user data --
