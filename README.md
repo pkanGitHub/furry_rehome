@@ -12,10 +12,18 @@ Fork and clone the repository
 * `cd` into the `backened` folder and run `rails s` to start the server
 * open another tab in terminal and `cd` into `frontend` folder and run `open index.html`.
 
-## To Add Later
-* Postgres
+## Image Attributions
 
-Since I had system problem with postgres, so I used SQLite for my project. So once I get that figured out, the instruction will be change.
+None of the image in the project are from internet.
+- Cats picture from my cousin, Karen Lee.
+- I owned the rest of the pictures.
+- And yes, I sketched out my own "No Image Available"
+
+## Looking To Add Later
+* PostgreSQL
+* Heroku
+
+Since I had system problem with postgreSQL, so I used SQLite for my project. So once I get that figured out, the instruction will be change.
 
 
 
