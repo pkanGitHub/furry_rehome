@@ -34,11 +34,11 @@
                     <h5 class="card-header">Pet info</h5>
                     <div class="card-body">
                         <h5 class="card-title">Category:</h5>
-                        <input type="radio" id="radioDog" value="Dogs" name="pet"> Dog
-                        <input type="radio" id="radioCat" value="Cats" name="pet"> Cat
-                        <input type="radio" id="radioFerret" value="Ferrets" name="pet"> Ferret
-                        <input type="radio" id="radioHorses" value="Horses" name="pet"> Horse
-                        <input type="radio" id="radioOtherCritters" value="OtherCritters" name="pet"> Other Critter
+                        <input type="radio" id="radioDog" value="dog" name="pet"> Dog
+                        <input type="radio" id="radioCat" value="cat" name="pet"> Cat
+                        <input type="radio" id="radioFerret" value="ferret" name="pet"> Ferret
+                        <input type="radio" id="radioHorses" value="horse" name="pet"> Horse
+                        <input type="radio" id="radioOtherCritters" value="otherCritter" name="pet"> Other Critter
                     </div>
                     <div class="pet-form" id="petBasicInfo">
                         <label>Name: </label>
@@ -60,45 +60,19 @@
                 <input type="submit" value="Rehome Pet">
             </div>
             </form>
-
-            <!-- css -->
-            <!-- <form id="addPetForm"> -->
-            <!-- <h2>Pet Info:</h2> -->
-            <!-- <div id="petCategory">
-                    <h4>Category:</h4>
-                    <input type="radio" id="radioDog" value="Dogs" name="pet">Dog
-                    <input type="radio" id="radioCat" value="Cats" name="pet">Cat
-                    <input type="radio" id="radioFerret" value="Ferrets" name="pet">Ferret
-                    <input type="radio" id="radioHorses" value="Horses" name="pet">Horse
-                    <input type="radio" id="radioOtherCritters" value="OtherCritters" name="pet">Other Critter
-                </div> -->
-            <!-- <div id="petBasicInfo">
-                    Name: <input id="addPetName" type="text"><br>
-                    Age: <input id="addPetAge" type="text"><br>
-                    Health Concern: <input id="addPetHealth" type="text"><br>
-                    Image: <input id="addPetImg" type="text"><br>
-                </div> -->
-            <!-- </form>
-            <form id="addContactForm" class="container">
-                <h2>Contact Info:</h2>
-                <div id="contactBasicInfo">
-                    Name:<input id="addContactName" type="text"><br>
-                    Email:<input id="addContactEmail" type="text"><br>
-                </div>
-                <input id="submit" type="submit">
-            </form> -->
         </div>
+
         <br><br><br>
 
         <!-- view available pets -->
         <div class="container">
-            <div class="category-link">
-                <button type="button" class="btn btn-outline-dark">All</button>
-                <button type="button" class="btn btn-outline-dark">Dog</button>
-                <button type="button" class="btn btn-outline-dark">Cat</button>
-                <button type="button" class="btn btn-outline-dark">Ferret</button>
-                <button type="button" class="btn btn-outline-dark">Horse</button>
-                <button type="button" class="btn btn-outline-dark">Other Critter</button>
+            <div class="category-filter" id="categoryFilter">
+                <button type="button" class="btn btn-outline-dark" id="allBtn">All</button>
+                <button type="button" class="btn btn-outline-dark" id="dogsBtn">Dog</button>
+                <button type="button" class="btn btn-outline-dark" id="catsBtn">Cat</button>
+                <button type="button" class="btn btn-outline-dark" id="ferretsBtn">Ferret</button>
+                <button type="button" class="btn btn-outline-dark" id="horsesBtn">Horse</button>
+                <button type="button" class="btn btn-outline-dark" id="otherCrittersBtn">Other Critter</button>
             </div>
             <br><br><br><br>
             <!-- pet card -->
@@ -108,7 +82,7 @@
                         <div class="flip-card">
                             <div class="flip-card-inner">
                                 <div class="flip-card-front">
-                                    <img src="img/Aki.jpg" class="img-thumbnail" style="width:200x;height:200px;">
+                                    <img src="" class="img-thumbnail" style="width:200x;height:200px;">
                                 </div>
                                 <div class="flip-card-back">
                                     <h2>Name:</h2>
