@@ -46,14 +46,14 @@ label {
 /* view available pet  */
 
 /* category selection css  */
-.category-link {
+.category-filter {
     display: flex;
     /* align-items: center; */
     justify-content: center;
 }
 
 
-.category-link button[type="button"] {
+.category-filter button[type="button"] {
     margin-right: 5px;
     height: 40px;
     width: 150px;
