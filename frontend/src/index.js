@@ -1,25 +1,22 @@
 // test that we can get data from the backend
 document.addEventListener('DOMContentLoaded', function () {
-    console.log("where js lives")
     // make a function run at onload, loadPet function that will fetch all my /pets, will loop thru 
     loadAllPets();
     createPet();
-    eventForAllPetType();
+    eventForAllButtons();
 })
 
-// class Pet {
-//     constructor(pet_name, pet_age, health_concern, image_link, category) {
-//         this.pet_name = pet_name
-//         this.pet_age = pet_age
-//         this.health_concern = health_concern
-//         this.image_link = image_link
-//          this.category = category
-//     }
-
-//     static get allPets() {
-//         return pets
-//     }
-// }
+class Pet {
+    constructor(petObj) {
+        this.id = petObj.id
+        this.userID = petObj.user_id
+        this.name = petObj.pet_name
+        this.age = petObj.pet_age
+        this.health = petObj.health_concern
+        this.img = petObj.image_link
+        this.category = petObj.category
+    }
+}
 
 // -- form for new pet --
 function createPet() {
@@ -75,7 +72,13 @@ async function loadAllPets(category) {
         allPets = allPets.filter(pet => pet.category === category)
     }
     // putting in all pet data into createPetCard, 
-    allPets.forEach(pet => createPetCard(pet));
+
+    allPets.forEach(petObj => {
+        pet = new Pet(petObj)
+        // console.log(pet)
+        createPetCard(pet) // pet is the object instance of the pet class
+    });
+
 }
 
 async function eventForAllButtons() {
@@ -96,18 +99,25 @@ async function eventForAllButtons() {
     // navbar buttons 
     // const home = document.getElementById("home-page");
     // home.addEventListener('click', () => )
-    const rehomeFormBtn = document.getElementById("rehome-page");
-    const form = document.querySelector('.card')
-    rehomeFormBtn.addEventListener('click', () => form)
+    // const rehomeFormBtn = document.getElementById("rehome-page");
+    // const form = document.querySelector('.card')
+    // rehomeFormBtn.addEventListener('click', () => form)
 
 }
 
+class User {
+    constructor(user) {
+        this.name = user.name
+        this.email = user.email
+    }
+}
 // -- get user data --
 // fetch (new path/pet-user/${:id} of the pet) return the user
 async function getUserFromPetID(petID) {
     let response = await fetch(`http://localhost:3000/pet-user/${petID}`)
     let userData = await response.json()
-    return userData
+    let user = new User(userData)
+    return user
 }
 
 // -- create Card --
@@ -118,11 +128,11 @@ async function createPetCard(pet) {
     const user = await getUserFromPetID(pet.id)
     const petsCard = document.querySelector('#pet-container')
     const newPet = document.querySelector('#pet-card-template').content.cloneNode(true)
-    newPet.querySelector(".img-thumbnail").src = pet.image_link || "img/NoImage.png"
+    newPet.querySelector(".img-thumbnail").src = pet.img || "img/NoImage.png"
     let petCardAttributes = newPet.querySelector(".flip-card-back").children
-    petCardAttributes[0].innerText = `Name: ${pet.pet_name}`
-    petCardAttributes[1].innerText = `Age: ${pet.pet_age}`
-    petCardAttributes[2].innerText = `Health Concern: ${pet.health_concern}`
+    petCardAttributes[0].innerText = `Name: ${pet.name}`
+    petCardAttributes[1].innerText = `Age: ${pet.age}`
+    petCardAttributes[2].innerText = `Health Concern: ${pet.health}`
     petCardAttributes[3].innerText = `Owner: ${user.name}`
     petCardAttributes[4].innerText = `Contact email: ${user.email}`
     // debugger;
@@ -130,10 +140,9 @@ async function createPetCard(pet) {
 
 }
 
-// class User {
-//     constructor(name, email) {
-//         this.name = name
-//         this.email = email
-//     }
-// }
-//
+
+// ToDo Next 
+// get the page to run according to the navbar buttons
+// get search button for emails
+// add validation in models
+// exchange into classes js
