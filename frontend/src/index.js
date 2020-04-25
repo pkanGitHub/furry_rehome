@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // make a function run at onload, loadPet function that will fetch all my /pets, will loop thru 
     loadAllPets();
     createPet();
-    eventForAllButtons();
+    eventForAllPets();
 })
 
 class Pet {
@@ -81,7 +81,7 @@ async function loadAllPets(category) {
 
 }
 
-async function eventForAllButtons() {
+async function eventForAllPets() {
     // pet buttons
     const allBtn = document.getElementById("allBtn");
     allBtn.addEventListener('click', () => loadAllPets())
@@ -95,14 +95,6 @@ async function eventForAllButtons() {
     horseBtn.addEventListener('click', () => loadAllPets("horse"))
     const otherCritterBtn = document.getElementById("otherCrittersBtn");
     otherCritterBtn.addEventListener('click', () => loadAllPets("otherCritter"))
-
-    // navbar buttons 
-    // const home = document.getElementById("home-page");
-    // home.addEventListener('click', () => )
-    // const rehomeFormBtn = document.getElementById("rehome-page");
-    // const form = document.querySelector('.card')
-    // rehomeFormBtn.addEventListener('click', () => form)
-
 }
 
 class User {
@@ -139,10 +131,3 @@ async function createPetCard(pet) {
     petsCard.appendChild(newPet)
 
 }
-
-
-// ToDo Next 
-// get the page to run according to the navbar buttons
-// get search button for emails
-// add validation in models
-// exchange into classes js
