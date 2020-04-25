@@ -35,7 +35,7 @@
                     <h5 class="card-header">Pet info</h5>
                     <div class="card-body">
                         <h5 class="card-title">Category:</h5>
-                        <input type="radio" id="radioDog" value="dog" name="pet"> Dog
+                        <input type="radio" id="radioDog" value="dog" name="pet" required> Dog
                         <input type="radio" id="radioCat" value="cat" name="pet"> Cat
                         <input type="radio" id="radioFerret" value="ferret" name="pet"> Ferret
                         <input type="radio" id="radioHorses" value="horse" name="pet"> Horse
@@ -43,18 +43,19 @@
                     </div>
                     <div class="pet-form" id="petBasicInfo">
                         <label>Name: </label>
-                        <input id="addPetName" type="text" name="petName"><br><br>
+                        <input id="addPetName" type="text" name="petName" required><br><br>
                         <label>Age: </label>
-                        <input id="addPetAge" type="text" name="petAge"><br><br>
+                        <input id="addPetAge" type="text" name="petAge" required><br><br>
                         <label>Health Concern: </label>
-                        <input id="addPetHealth" type="text" name="petHealth"><br><br>
+                        <input id="addPetHealth" type="text" name="petHealth" placeholder=" N/A if there's none"
+                            required><br><br>
                         <label>Image URL: </label>
                         <input id="addPetImg" type="text" name="petImg"><br><br>
                     </div>
                     <h5 class="card-header">Contact info</h5><br>
                     <div class="contact-form" id="contactBasicInfo">
-                        Name: <input id="addContactName" type="text"><br><br>
-                        Email: <input id="addContactEmail" type="text"><br><br>
+                        Name: <input id="addContactName" type="text" required><br><br>
+                        Email: <input id="addContactEmail" type="text" required><br><br>
                     </div>
             </div>
             <div class="submit-wrap">
