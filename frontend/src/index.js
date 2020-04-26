@@ -57,12 +57,8 @@ class Pet {
     static async loadAllPets(category) {
         // if the pet card don't belong to that category, 
         // then clear the pet cards and re insert the cards
-        if (!!document.querySelector(".pet-card")) {
-            let petCards = document.querySelectorAll(".pet-card")
-            for (let card of petCards) {
-                card.remove()
-            }
-        }
+        Pet.removeOldCards();
+
         // create and insert into html for every single one of the pet
         let request = await fetch("http://localhost:3000/pets")
         let allPets = await request.json()
@@ -104,12 +100,7 @@ class Pet {
         const response = await fetch(`http://localhost:3000/pets?email=${email}`)
         let petsFromEmail = await response.json()
 
-        if (!!document.querySelector(".pet-card")) {
-            let petCards = document.querySelectorAll(".pet-card")
-            for (let card of petCards) {
-                card.remove()
-            }
-        }
+        Pet.removeOldCards();
 
         petsFromEmail.forEach(petObj => {
             let pet = new Pet(petObj)
@@ -145,6 +136,16 @@ class Pet {
         // debugger;
         petsCard.appendChild(newPet)
 
+    }
+
+    // refactor to have it's own function
+    static removeOldCards() {
+        if (!!document.querySelector(".pet-card")) {
+            let petCards = document.querySelectorAll(".pet-card")
+            for (let card of petCards) {
+                card.remove()
+            }
+        }
     }
 
 }
