@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     Pet.eventForAllPets();
 })
 
-
 class Pet {
     constructor(petObj) {
         this.id = petObj.id
@@ -71,8 +70,8 @@ class Pet {
         if (category) {
             allPets = allPets.filter(pet => pet.category === category)
         }
-        // putting in all pet data into createPetCard, 
 
+        // putting in all pet data into createPetCard 
         allPets.forEach(petObj => {
             let pet = new Pet(petObj)
             // console.log(pet)
@@ -94,6 +93,29 @@ class Pet {
         horseBtn.addEventListener('click', () => Pet.loadAllPets("horse"))
         const otherCritterBtn = document.getElementById("otherCrittersBtn");
         otherCritterBtn.addEventListener('click', () => Pet.loadAllPets("otherCritter"))
+
+        const searchBtn = document.getElementById("searchBtn")
+        searchBtn.addEventListener('submit', Pet.filterPetsByEmail)
+    }
+
+    static async filterPetsByEmail(event) {
+        event.preventDefault()
+        const email = event.target.elements.email.value
+        const response = await fetch(`http://localhost:3000/pets?email=${email}`)
+        let petsFromEmail = await response.json()
+
+        if (!!document.querySelector(".pet-card")) {
+            let petCards = document.querySelectorAll(".pet-card")
+            for (let card of petCards) {
+                card.remove()
+            }
+        }
+
+        petsFromEmail.forEach(petObj => {
+            let pet = new Pet(petObj)
+            pet.createPetCard()
+        });
+
     }
 
     // -- get user data --
@@ -133,9 +155,4 @@ class User {
         this.email = user.email
     }
 }
-// static:
-// User.getUserFromPetID
 
-// regular method : use this if you want to use data from an instance of the class
-// user = new User()
-// user.getUserFromPetID

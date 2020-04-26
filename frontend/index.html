@@ -28,75 +28,86 @@
         </div> -->
 
         <br>
-        <!-- rehoming form bootstrap -->
-        <div class="container">
-            <div class="card">
-                <form class="rehome-form" id="rehome-form" data-remote="true">
-                    <h5 class="card-header">Pet info</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Category:</h5>
-                        <input type="radio" id="radioDog" value="dog" name="pet" required> Dog
-                        <input type="radio" id="radioCat" value="cat" name="pet"> Cat
-                        <input type="radio" id="radioFerret" value="ferret" name="pet"> Ferret
-                        <input type="radio" id="radioHorses" value="horse" name="pet"> Horse
-                        <input type="radio" id="radioOtherCritters" value="otherCritter" name="pet"> Other Critter
-                    </div>
-                    <div class="pet-form" id="petBasicInfo">
-                        <label>Name: </label>
-                        <input id="addPetName" type="text" name="petName" required><br><br>
-                        <label>Age: </label>
-                        <input id="addPetAge" type="text" name="petAge" required><br><br>
-                        <label>Health Concern: </label>
-                        <input id="addPetHealth" type="text" name="petHealth" placeholder=" N/A if there's none"
-                            required><br><br>
-                        <label>Image URL: </label>
-                        <input id="addPetImg" type="text" name="petImg"><br><br>
-                    </div>
-                    <h5 class="card-header">Contact info</h5><br>
-                    <div class="contact-form" id="contactBasicInfo">
-                        Name: <input id="addContactName" type="text" required><br><br>
-                        Email: <input id="addContactEmail" type="text" required><br><br>
-                    </div>
+        <div id="all-content">
+            <!-- rehoming form bootstrap -->
+            <div id="rehome" class="container">
+                <div class="card">
+                    <form class="rehome-form" id="rehome-form" data-remote="true">
+                        <h5 class="card-header">Pet info</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">Category:</h5>
+                            <input type="radio" id="radioDog" value="dog" name="pet" required> Dog
+                            <input type="radio" id="radioCat" value="cat" name="pet"> Cat
+                            <input type="radio" id="radioFerret" value="ferret" name="pet"> Ferret
+                            <input type="radio" id="radioHorses" value="horse" name="pet"> Horse
+                            <input type="radio" id="radioOtherCritters" value="otherCritter" name="pet"> Other Critter
+                        </div>
+                        <div class="pet-form" id="petBasicInfo">
+                            <label>Name: </label>
+                            <input id="addPetName" type="text" name="petName" required><br><br>
+                            <label>Age: </label>
+                            <input id="addPetAge" type="text" name="petAge" required><br><br>
+                            <label>Health Concern: </label>
+                            <input id="addPetHealth" type="text" name="petHealth" placeholder=" N/A if there's none"
+                                required><br><br>
+                            <label>Image URL: </label>
+                            <input id="addPetImg" type="text" name="petImg"><br><br>
+                        </div>
+                        <h5 class="card-header">Contact info</h5><br>
+                        <div class="contact-form" id="contactBasicInfo">
+                            Name: <input id="addContactName" type="text" required><br><br>
+                            Email: <input id="addContactEmail" type="text" required><br><br>
+                        </div>
+                </div>
+                <div class="submit-wrap">
+                    <input type="submit" value="Rehome Pet">
+                </div>
+                </form>
             </div>
-            <div class="submit-wrap">
-                <input type="submit" value="Rehome Pet">
-            </div>
-            </form>
-        </div>
 
-        <br><br><br>
-
-        <!-- view available pets -->
-        <div class="container">
-            <div class="category-filter" id="categoryFilter">
-                <button type="button" class="btn btn-outline-dark" id="allBtn">All</button>
-                <button type="button" class="btn btn-outline-dark" id="dogsBtn">Dog</button>
-                <button type="button" class="btn btn-outline-dark" id="catsBtn">Cat</button>
-                <button type="button" class="btn btn-outline-dark" id="ferretsBtn">Ferret</button>
-                <button type="button" class="btn btn-outline-dark" id="horsesBtn">Horse</button>
-                <button type="button" class="btn btn-outline-dark" id="otherCrittersBtn">Other Critter</button>
+            <br><br><br>
+            <div class="search-container">
+                <form id="searchBtn" class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" name="email" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
             </div>
-            <br><br><br><br>
-            <!-- pet card -->
-            <div id="pet-container" class="row ml-4">
-                <template id="pet-card-template">
-                    <div class="col-md pet-card">
-                        <div class="flip-card">
-                            <div class="flip-card-inner">
-                                <div class="flip-card-front">
-                                    <img src="" class="img-thumbnail" style="width:200x;height:200px;">
-                                </div>
-                                <div class="flip-card-back">
-                                    <h2>Name:</h2>
-                                    <p>Age:</p>
-                                    <p>Health Concern:</p>
-                                    <p>Owner:</p>
-                                    <p>Contact email:</p>
+
+            <br><br>
+
+            <!-- view available pets -->
+            <div id="available-pets" class="container">
+                <div class="category-filter" id="categoryFilter">
+                    <button type="button" class="btn btn-outline-dark" id="allBtn">All</button>
+                    <button type="button" class="btn btn-outline-dark" id="dogsBtn">Dog</button>
+                    <button type="button" class="btn btn-outline-dark" id="catsBtn">Cat</button>
+                    <button type="button" class="btn btn-outline-dark" id="ferretsBtn">Ferret</button>
+                    <button type="button" class="btn btn-outline-dark" id="horsesBtn">Horse</button>
+                    <button type="button" class="btn btn-outline-dark" id="otherCrittersBtn">Other Critter</button>
+                </div>
+                <br><br><br><br>
+                <!-- pet card -->
+                <div id="pet-container" class="row ml-4">
+                    <template id="pet-card-template">
+                        <div class="col-md pet-card">
+                            <div class="flip-card">
+                                <div class="flip-card-inner">
+                                    <div class="flip-card-front">
+                                        <img src="" class="img-thumbnail" style="width:200x;height:200px;">
+                                    </div>
+                                    <div class="flip-card-back">
+                                        <h2>Name:</h2>
+                                        <p>Age:</p>
+                                        <p>Health Concern:</p>
+                                        <p>Owner:</p>
+                                        <p>Contact email:</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </template>
+                    </template>
+                </div>
             </div>
         </div>
     </div>
