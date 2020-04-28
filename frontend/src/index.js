@@ -92,6 +92,32 @@ class Pet {
 
         const searchBtn = document.getElementById("searchBtn")
         searchBtn.addEventListener('submit', Pet.filterPetsByEmail)
+
+        const sortAgeBtn = document.getElementById("sortBtn")
+        sortAgeBtn.addEventListener('click', Pet.sortPetByAge)
+    }
+
+    static async sortPetByAge() {
+        let request = await fetch(`http://localhost:3000/pets`)
+        let sortedPets = await request.json()
+
+        Pet.removeOldCards();
+
+        sortedPets = sortedPets.sort((a, b) => {
+            if (a.pet_age < b.pet_age) {
+                return -1
+            } else if (a.pet_age > b.pet_age) {
+                return 1
+            } else {
+                return 0
+            }
+        });
+
+        sortedPets.forEach(petObj => {
+            let pet = new Pet(petObj)
+            pet.createPetCard()
+        })
+
     }
 
     static async filterPetsByEmail(event) {
